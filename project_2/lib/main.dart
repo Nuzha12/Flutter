@@ -56,19 +56,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter(){
+  void _incrementCounter() {
     print('increment click $_counter');
     _counter++;
 
     print('increment click $_counter');
-    _counter++;
+    setState(() {
+      _counter++;
+    });
   }
 
-  // void _incrementCounter() {
-  //   setState(() {
-  //     _counter++;
-  //   });
-  // }
+
 
   @override
   void initState() {
@@ -104,7 +102,6 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 height: 40.0,
                 width: 400.0,
-                // margin: EdgeInsets.only(bottom: 10),
                 child: Center(
                   child: Text("Welcome to Flutter!"),
                 ),
@@ -161,6 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+
               Container(
                 height: 40.0,
                 child: Row(
@@ -212,12 +210,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: BoxDecoration(
                    color: Colors.white,
                    // borderRadius: BorderRadius.circular(5)
-                   borderRadius: BorderRadius.all(Radius.circular(25)),
+                   // borderRadius: BorderRadius.all(Radius.circular(25)),
                    // borderRadius: BorderRadius.only(topLeft: Radius.circular(5), topRight: Radius.circular(2))
                    //    borderRadius: BorderRadius.all(Radius.elliptical(5, 3)),
-                   //    border: Border.all(color: Colors.black, style: BorderStyle.solid, width: 2),
+                      border: Border.all(color: Colors.black, style: BorderStyle.solid, width: 2),
                       boxShadow: [
-                        BoxShadow(color: Colors.black26,
+                        BoxShadow(
+                                  color: Colors.black26,
                                   offset: Offset(0, 4),
                                   blurRadius: 5
                         ),
@@ -260,7 +259,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: TextDecoration.underline,
                     decorationColor: Colors.cyanAccent,
                     decorationThickness: 5,
-                    decorationStyle: TextDecorationStyle.solid
+                    decorationStyle: TextDecorationStyle.dotted
                   ),),
                 ),
               ),
@@ -300,11 +299,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
       ),
     );
-
   }
 }
-
-
 
 class MyFirstWidget extends StatelessWidget{
   const MyFirstWidget({super.key});
@@ -317,6 +313,8 @@ class MyFirstWidget extends StatelessWidget{
 
   }
 }
+
+
 
 
 
